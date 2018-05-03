@@ -12,7 +12,7 @@ PASS = ''
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:' + int(RDY_PORT_SSH)
+DEFAULT_HOST = '127.0.0.1:' + str(RDY_PORT_SSH)
 RESPONSE = 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware\r\n\r\n'
 
 
