@@ -6,12 +6,13 @@ import socket, threading, thread, select, signal, sys, time, getopt
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
 LISTENING_PORT = 8080
+RDY_PORT_SSH = 22
 PASS = ''
 
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:443'
+DEFAULT_HOST = '127.0.0.1:' + int(RDY_PORT_SSH)
 RESPONSE = 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware\r\n\r\n'
 
 
@@ -168,7 +169,7 @@ class ConnectionHandler(threading.Thread):
             host = host[:i]
         else:
             if self.method=='CONNECT':
-                port = 443
+                port = int(RDY_PORT_SSH)
             else:
                 port = 8080
 
