@@ -7,14 +7,14 @@ import socket, threading, thread, select, signal, sys, time, getopt
 LISTENING_ADDR = '0.0.0.0'
 LISTENING_PORT = 80
 RDY_PORT_SSH = 22
-RDY_LINES = '\r\n\r\n'
+RDY_LINES = "\r\n\r\n"
 PASS = ''
 
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:' + str(RDY_PORT_SSH)
-RESPONSE = 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware'
+RESPONSE = 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware' + str(RDY_LINES)
 #RESPONSE = 'HTTP/1.1 200 Hello_World!\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'  # lint:ok
 
 
@@ -185,7 +185,7 @@ class ConnectionHandler(threading.Thread):
         self.log += ' - CONNECT ' + path
 
         self.connect_target(path)
-        self.client.sendall(RESPONSE) + str(RDY_LINES)
+        self.client.sendall(RESPONSE)
         self.client_buffer = ''
 
         self.server.printLog(self.log)
