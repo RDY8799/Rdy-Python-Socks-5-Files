@@ -1,7 +1,19 @@
 import socket, threading, thread, select, signal, sys, time, getopt
 
 # Python Proxy
-# Um simples proxy para o metodo HTTP CONNECT
+# RDY SOFTWARE IS A INOVATION OF THE FUTURE.
+
+class Colour:
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
 
 # CONFIG
 LISTENING_ADDR = '0.0.0.0'
@@ -13,7 +25,7 @@ PASS = ''
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:' + str(RDY_PORT_SSH)
-RESPONSE = 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware\r\n\r\n'
+RESPONSE = Colour.GREN + 'HTTP/1.1 200 RDY SOFTWARE - @rdysoftware\r\n\r\n' + Colour.END
 #RESPONSE = 'HTTP/1.1 200 Hello_World!\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 Connection established\r\n\r\n'  # lint:ok
 
 
